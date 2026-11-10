@@ -14,6 +14,7 @@ import zipfile
 from pathlib import Path
 
 import httpx
+import numpy as np
 import pandas as pd
 
 ZENODO_RECORD = "16807551"
@@ -171,7 +172,7 @@ def stop_mask(index: pd.DatetimeIndex, status: pd.DataFrame | None) -> pd.Series
     # 10-мин интервал [t, t+10) оқиғамен [s, e) қиылысады <=> t+10 > s және t < e
     lo = pd.Index(starts_iv).searchsorted(stops["Timestamp start"].values, side="right")
     hi = pd.Index(t).searchsorted(ends, side="left")
-    diff = pd.Series(0, index=range(len(index) + 1)).to_numpy()
+    diff = np.zeros(len(index) + 1, dtype=np.int64)
     for a, b in zip(lo, hi):
         if b > a:
             diff[a] += 1
