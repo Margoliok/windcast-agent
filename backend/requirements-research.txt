@@ -1,0 +1,6 @@
+# Зерттеу модельдері (M3 LSTM, M4 TFT, M5 Chronos) — эксперименттер үшін, жұмыс режиміне міндетті емес
+-r requirements.txt
+torch>=2.2
+neuralforecast>=1.7
+chronos-forecasting>=1.4
+huggingface_hub>=0.23

@@ -1,0 +1,15 @@
+.env
+data/raw/
+data/cache/
+data/processed/
+data/models/
+data/mlruns/
+data/*.db
+reports/exports/
+**/__pycache__/
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+.playwright-mcp/
+*.log
+.venv/
